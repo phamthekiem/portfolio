@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Phạm Thế Kiểm – Portfolio</title>
+<title>Phạm Thế Kiểm – IT Support | EcoHealth</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -11,13 +11,14 @@
 
   :root {
     --ink:      #1C2526;
-    --steel:    #2C3E50;
-    --accent:   #C0392B;
-    --accent2:  #E74C3C;
+    --steel:    #1A5276;
+    --accent:   #117A65;
+    --accent2:  #1ABC9C;
     --silver:   #7F8C8D;
-    --mist:     #F4F6F7;
-    --rule:     #DCE0E1;
+    --mist:     #EAF4F4;
+    --rule:     #D5E8E4;
     --teal:     #0F8A6E;
+    --blue:     #2471A3;
     --purple:   #6C5CE7;
     --white:    #FFFFFF;
     --sans:     'DM Sans', system-ui, sans-serif;
@@ -27,7 +28,7 @@
   html {
     font-family: var(--sans);
     color: var(--ink);
-    background: #E8EAEB;
+    background: #D5E8E4;
     font-size: 14px;
     -webkit-text-size-adjust: 100%;
   }
@@ -98,7 +99,7 @@
   .name-dot {
     display: inline-block;
     width: 6px; height: 6px;
-    background: var(--accent);
+    background: var(--accent2);
     border-radius: 50%;
     margin-left: 4px;
     vertical-align: middle;
@@ -166,7 +167,7 @@
   }
   .dot-grid span {
     width: 3px; height: 3px;
-    background: rgba(44,62,80,0.14);
+    background: rgba(26,82,118,0.14);
     border-radius: 50%;
     display: block;
   }
@@ -246,7 +247,7 @@
     background: transparent;
     transition: background 0.2s;
   }
-  .stat-box:hover::before { background: var(--accent); }
+  .stat-box:hover::before { background: var(--accent2); }
   .stat-val {
     font-size: 20px;
     font-weight: 600;
@@ -366,8 +367,8 @@
 
   /* ── EDUCATION ──────────────────────────────── */
   .edu-item { margin-bottom: 11px; }
-  .edu-school { font-size: 11px; font-weight: 600; color: var(--ink); }
-  .edu-detail { font-size: 10px; color: var(--silver); line-height: 1.5; }
+  .edu-school { font-size: 12px; font-weight: 600; color: var(--ink); }
+  .edu-detail { font-size: 11px; color: var(--silver); line-height: 1.5; }
   .edu-period { font-size: 9px; font-family: var(--mono); color: var(--accent); margin-top: 1px; }
 
   /* ── TAGS ───────────────────────────────────── */
@@ -437,6 +438,44 @@
     border-radius: 50%;
     opacity: 0.4;
   }
+  /* Current job highlight */
+  .tl-item.current .tl-dot {
+    border-color: var(--accent2);
+    background: var(--accent2);
+    width: 16px; height: 16px;
+    left: -0.5px;
+  }
+  .tl-item.current .tl-dot::after {
+    content: '';
+    position: absolute;
+    top: -4px; left: -4px;
+    width: 20px; height: 20px;
+    border: 1.5px solid var(--accent2);
+    border-radius: 50%;
+    opacity: 0.5;
+  }
+  .tl-item.current {
+    background: linear-gradient(90deg, #EAF7F4 0%, transparent 100%);
+    border-radius: 0 6px 6px 0;
+    margin-left: -6px;
+    padding-left: 32px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+  .current-badge {
+    display: inline-block;
+    background: var(--accent2);
+    color: #fff;
+    font-size: 8.5px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 20px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
   .tl-header {
     display: flex;
     justify-content: space-between;
@@ -453,7 +492,7 @@
     flex: 1;
     min-width: 0;
   }
-  .tl-item:not(.key) .tl-title { color: var(--ink); }
+  .tl-item:not(.key):not(.current) .tl-title { color: var(--ink); }
   .tl-period {
     font-size: 11px;
     font-family: var(--mono);
@@ -462,9 +501,9 @@
     margin-top: 1px;
     white-space: nowrap;
   }
-  .tl-item:not(.key) .tl-period { color: var(--silver); }
+  .tl-item:not(.key):not(.current) .tl-period { color: var(--silver); }
   .tl-sub {
-    font-size: 11.5px;
+    font-size: 12.5px;
     color: var(--silver);
     font-style: italic;
     margin-bottom: 5px;
@@ -487,8 +526,8 @@
 
   /* ── NOTE BOX ───────────────────────────────── */
   .note-box {
-    background: #FEF9F9;
-    border: 1px solid #F5C6C6;
+    background: #EAF4F4;
+    border: 1px solid #A3D4CB;
     border-left: 3px solid var(--accent);
     border-radius: 0 4px 4px 0;
     padding: 10px 14px;
@@ -528,130 +567,59 @@
      RESPONSIVE — TABLET (≤ 768px)
   ═══════════════════════════════════════════════ */
   @media (max-width: 768px) {
-    html { font-size: 14px; background: #E8EAEB; }
-
+    html { font-size: 14px; background: #D5E8E4; }
     .page { max-width: 100%; margin: 0; box-shadow: none; }
-
-    /* Header stacks vertically */
-    .header {
-      grid-template-columns: 1fr;
-      min-height: auto;
-    }
+    .header { grid-template-columns: 1fr; min-height: auto; }
     .divider-line { display: none; }
-    .header-left {
-      padding: 28px 24px 22px;
-    }
+    .header-left { padding: 28px 24px 22px; }
     .name-vi { font-size: 24px; }
-    .header-right {
-      padding: 22px 24px 20px;
-    }
+    .header-right { padding: 22px 24px 20px; }
     .dot-grid { display: none; }
-    .contact-grid {
-      grid-template-columns: 1fr 1fr;
-      gap: 8px 16px;
-    }
-
-    /* Stats — 2×2 on tablet */
-    .stats-row {
-      grid-template-columns: repeat(2, 1fr);
-    }
+    .contact-grid { grid-template-columns: 1fr 1fr; gap: 8px 16px; }
+    .stats-row { grid-template-columns: repeat(2, 1fr); }
     .stat-box:nth-child(2) { border-right: none; }
     .stat-box:nth-child(3) { border-top: 1px solid rgba(255,255,255,0.08); }
     .stat-box:nth-child(4) { border-top: 1px solid rgba(255,255,255,0.08); border-right: none; }
-
-    /* Body stacks vertically */
-    .body {
-      grid-template-columns: 1fr;
-    }
-    .left-panel {
-      border-right: none;
-      border-bottom: 2px solid var(--rule);
-      padding: 24px 22px;
-    }
-    .right-panel {
-      padding: 24px 22px 32px;
-    }
-
-    /* Fix sec-head accent bar position */
+    .body { grid-template-columns: 1fr; }
+    .left-panel { border-right: none; border-bottom: 2px solid var(--rule); padding: 24px 22px; }
+    .right-panel { padding: 24px 22px 32px; }
     .left-panel .sec-head::before,
-    .right-panel .sec-head::before {
-      left: -22px;
-    }
-
-    /* Skills: 2 columns on tablet */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0 24px;
-    }
+    .right-panel .sec-head::before { left: -22px; }
+    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; }
     .skill-name { width: 96px; }
-
-    /* Timeline: make period wrap naturally */
     .tl-header { flex-wrap: wrap; }
     .tl-period { margin-left: 0; }
   }
 
-  /* ═══════════════════════════════════════════════
-     RESPONSIVE — MOBILE (≤ 480px)
-  ═══════════════════════════════════════════════ */
   @media (max-width: 480px) {
     html { font-size: 13px; }
-
     .header-left { padding: 24px 18px 20px; }
     .header-right { padding: 18px 18px 18px; }
-
     .name-vi { font-size: 22px; }
     .tagline { font-size: 10.5px; }
-
-    /* Contact: 1 column on small mobile */
-    .contact-grid {
-      grid-template-columns: 1fr;
-      gap: 7px;
-    }
+    .contact-grid { grid-template-columns: 1fr; gap: 7px; }
     .contact-item { font-size: 13px; }
-
-    /* Stats: 2×2 stays, just tighter */
     .stats-row { grid-template-columns: repeat(2, 1fr); }
     .stat-val { font-size: 18px; }
     .stat-lbl { font-size: 9px; }
     .stat-box { padding: 12px 10px; }
-
     .left-panel { padding: 20px 18px; }
     .right-panel { padding: 20px 18px 28px; }
-
     .left-panel .sec-head::before,
-    .right-panel .sec-head::before {
-      left: -18px;
-    }
-
-    /* Skills: single column on mobile */
-    .skills-grid {
-      grid-template-columns: 1fr;
-    }
+    .right-panel .sec-head::before { left: -18px; }
+    .skills-grid { grid-template-columns: 1fr; }
     .skill-name { width: 100px; }
-
     .profile-text { font-size: 12px; }
     .objective-block { font-size: 13px; }
     .tl-title { font-size: 13px; }
     .tl-bullets li { font-size: 12px; }
     .tl-sub { font-size: 11px; }
-
-    /* Footer stack */
-    .footer {
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 12px 18px;
-      gap: 3px;
-    }
+    .footer { flex-direction: column; align-items: flex-start; padding: 12px 18px; gap: 3px; }
     .footer-contact { font-size: 10px; }
-
     .badge-row { gap: 5px; }
     .badge { font-size: 10px; padding: 3px 8px; }
   }
 
-  /* ═══════════════════════════════════════════════
-     RESPONSIVE — VERY SMALL (≤ 360px)
-  ═══════════════════════════════════════════════ */
   @media (max-width: 360px) {
     .name-vi { font-size: 19px; }
     .position-badge { font-size: 8px; }
@@ -674,8 +642,8 @@
   <div class="header">
     <div class="header-left">
       <div class="name-vi">Phạm Thế Kiểm<span class="name-dot"></span></div>
-      <div class="position-badge">Factory IT &amp; Technical Staff</div>
-      <div class="tagline">Kỹ thuật · Hệ thống · Vận hành nhà máy</div>
+      <div class="position-badge">IT Support · Healthcare</div>
+      <div class="tagline">Hệ thống · Hỗ trợ kỹ thuật · Môi trường y tế</div>
       <div class="years-box">
         <span class="years-num">10+</span>
         <span class="years-lbl">Năm kinh nghiệm</span>
@@ -696,12 +664,12 @@
         <div class="contact-item"><span class="contact-icon">↗</span>13/10/1993 · Nam</div>
         <div class="contact-item"><span class="contact-icon">⌖</span>Hoàng Mai, Hà Nội</div>
       </div>
-      <div class="available-label">Sẵn sàng làm việc tại</div>
+      <div class="available-label">Ứng tuyển vị trí</div>
       <div class="badge-row">
-        <span class="badge">Hà Nội</span>
-        <span class="badge">Bắc Ninh</span>
-        <span class="badge">Hưng Yên</span>
-        <span class="badge">Thái Nguyên</span>
+        <span class="badge">IT Support</span>
+        <span class="badge">Helpdesk</span>
+        <span class="badge">Hospital IT</span>
+        <span class="badge">EcoHealth</span>
       </div>
     </div>
   </div>
@@ -709,9 +677,9 @@
   <!-- STATS -->
   <div class="stats-row">
     <div class="stat-box"><div class="stat-val">10+</div><div class="stat-lbl">Năm kinh nghiệm</div></div>
-    <div class="stat-box"><div class="stat-val">3+</div><div class="stat-lbl">Năm tại nhà máy</div></div>
-    <div class="stat-box"><div class="stat-val">2</div><div class="stat-lbl">Lĩnh vực chuyên môn</div></div>
-    <div class="stat-box"><div class="stat-val">4</div><div class="stat-lbl">Tỉnh / TP sẵn sàng</div></div>
+    <div class="stat-box"><div class="stat-val">1+</div><div class="stat-lbl">Năm IT bệnh viện</div></div>
+    <div class="stat-box"><div class="stat-val">3</div><div class="stat-lbl">Môi trường chuyên biệt</div></div>
+    <div class="stat-box"><div class="stat-val">24/7</div><div class="stat-lbl">Sẵn sàng hỗ trợ</div></div>
   </div>
 
   <!-- BODY -->
@@ -721,42 +689,42 @@
     <div class="left-panel">
 
       <div class="sec-head"><span class="sec-vi">Hồ sơ</span><span class="sec-en">Profile</span></div>
-      <p class="profile-text">Kỹ thuật viên có nền tảng <strong>Điện tử – Viễn thông</strong>, kinh nghiệm thực chiến tại nhà máy Samsung và năng lực IT hệ thống toàn diện. Linh hoạt giữa kỹ thuật phần cứng và backoffice.</p>
+      <p class="profile-text">Kỹ thuật viên IT có nền tảng <strong>Điện tử – Viễn thông</strong>, đang làm việc thực tế tại môi trường Tập đoàn đa nghành nghề. Thành thạo hỗ trợ hệ thống, thiết bị y tế và hạ tầng mạng trong môi trường đòi hỏi tính ổn định và bảo mật cao.</p>
 
       <div class="sec-head sec-gap"><span class="sec-vi">Kỹ năng</span><span class="sec-en">Skills</span></div>
 
       <div class="skills-grid">
         <div class="skill-group">
           <div class="skill-group-title">
-            <span class="skill-group-dot" style="background:var(--steel);"></span>
-            Kỹ thuật công nghiệp
+            <span class="skill-group-dot" style="background:var(--teal);"></span>
+            IT Support &amp; Helpdesk
           </div>
-          <div class="skill-row"><span class="skill-name">Bảo trì CNC / Robot</span><div class="skill-track"><div class="skill-fill" style="width:80%;background:var(--steel);"></div></div></div>
-          <div class="skill-row"><span class="skill-name">Điện – Cơ cơ bản</span><div class="skill-track"><div class="skill-fill" style="width:68%;background:var(--steel);"></div></div></div>
-          <div class="skill-row"><span class="skill-name">Camera / Thiết bị</span><div class="skill-track"><div class="skill-fill" style="width:85%;background:var(--steel);"></div></div></div>
-          <div class="skill-row"><span class="skill-name">Đọc bản vẽ điện</span><div class="skill-track"><div class="skill-fill" style="width:55%;background:var(--steel);"></div></div></div>
+          <div class="skill-row"><span class="skill-name">IT Support / Helpdesk</span><div class="skill-track"><div class="skill-fill" style="width:92%;background:var(--teal);"></div></div></div>
+          <div class="skill-row"><span class="skill-name">Xử lý sự cố thiết bị</span><div class="skill-track"><div class="skill-fill" style="width:88%;background:var(--teal);"></div></div></div>
+          <div class="skill-row"><span class="skill-name">Quản lý tài sản IT</span><div class="skill-track"><div class="skill-fill" style="width:82%;background:var(--teal);"></div></div></div>
+          <div class="skill-row"><span class="skill-name">Windows / Office 365</span><div class="skill-track"><div class="skill-fill" style="width:90%;background:var(--teal);"></div></div></div>
         </div>
 
         <div class="skill-group">
           <div class="skill-group-title">
-            <span class="skill-group-dot" style="background:var(--teal);"></span>
-            IT hệ thống
+            <span class="skill-group-dot" style="background:var(--steel);"></span>
+            Hạ tầng &amp; Mạng
           </div>
-          <div class="skill-row"><span class="skill-name">IT Support / Helpdesk</span><div class="skill-track"><div class="skill-fill" style="width:90%;background:var(--teal);"></div></div></div>
-          <div class="skill-row"><span class="skill-name">Network / Server</span><div class="skill-track"><div class="skill-fill" style="width:75%;background:var(--teal);"></div></div></div>
-          <div class="skill-row"><span class="skill-name">Quản lý tài sản IT</span><div class="skill-track"><div class="skill-fill" style="width:80%;background:var(--teal);"></div></div></div>
-          <div class="skill-row"><span class="skill-name">ERP / Phần mềm nội bộ</span><div class="skill-track"><div class="skill-fill" style="width:62%;background:var(--teal);"></div></div></div>
+          <div class="skill-row"><span class="skill-name">Network / LAN / Wi-Fi</span><div class="skill-track"><div class="skill-fill" style="width:80%;background:var(--steel);"></div></div></div>
+          <div class="skill-row"><span class="skill-name">Server / NAS</span><div class="skill-track"><div class="skill-fill" style="width:75%;background:var(--steel);"></div></div></div>
+          <div class="skill-row"><span class="skill-name">Camera giám sát</span><div class="skill-track"><div class="skill-fill" style="width:88%;background:var(--steel);"></div></div></div>
+          <div class="skill-row"><span class="skill-name">Bảo mật hệ thống</span><div class="skill-track"><div class="skill-fill" style="width:65%;background:var(--steel);"></div></div></div>
         </div>
 
         <div class="skill-group">
           <div class="skill-group-title">
             <span class="skill-group-dot" style="background:var(--purple);"></span>
-            Hành chính &amp; Dev
+            Phần mềm &amp; Báo cáo
           </div>
-          <div class="skill-row"><span class="skill-name">PHP / WordPress</span><div class="skill-track"><div class="skill-fill" style="width:85%;background:var(--purple);"></div></div></div>
+          <div class="skill-row"><span class="skill-name">Phần mềm y tế</span><div class="skill-track"><div class="skill-fill" style="width:70%;background:var(--purple);"></div></div></div>
+          <div class="skill-row"><span class="skill-name">ERP / Nội bộ</span><div class="skill-track"><div class="skill-fill" style="width:65%;background:var(--purple);"></div></div></div>
           <div class="skill-row"><span class="skill-name">Excel / Báo cáo</span><div class="skill-track"><div class="skill-fill" style="width:80%;background:var(--purple);"></div></div></div>
-          <div class="skill-row"><span class="skill-name">Quản lý nhóm</span><div class="skill-track"><div class="skill-fill" style="width:75%;background:var(--purple);"></div></div></div>
-          <div class="skill-row"><span class="skill-name">Tiếng Anh kỹ thuật</span><div class="skill-track"><div class="skill-fill" style="width:48%;background:var(--purple);"></div></div></div>
+          <div class="skill-row"><span class="skill-name">Tiếng Anh kỹ thuật</span><div class="skill-track"><div class="skill-fill" style="width:52%;background:var(--purple);"></div></div></div>
         </div>
       </div><!-- /.skills-grid -->
 
@@ -768,20 +736,25 @@
       </div>
       <div class="edu-item">
         <div class="edu-school">Thực tập – Devpro Vietnam JSC</div>
-        <div class="edu-detail">PHP / Laravel &amp; Quản trị server</div>
+        <div class="edu-detail">PHP / Laravel &amp; Quản trị server Linux</div>
         <div class="edu-period">10/2018 – 04/2019</div>
       </div>
 
-      <div class="sec-head sec-gap"><span class="sec-vi">Môi trường</span><span class="sec-en">Work Fit</span></div>
+      <div class="sec-head sec-gap"><span class="sec-vi">Phù hợp</span><span class="sec-en">Work Fit</span></div>
       <div class="tag-list">
-        <div class="tag">Nhà máy Nhật / Hàn Quốc</div>
-        <div class="tag">Môi trường đa quốc gia</div>
-        <div class="tag">Khu CN Bắc Ninh / HY / TN</div>
-        <div class="tag">Sẵn sàng học PLC / HMI</div>
+        <div class="tag">Môi trường bệnh viện / y tế</div>
+        <div class="tag">Tổ chức quốc tế / liên doanh</div>
+        <div class="tag">Hỗ trợ kỹ thuật 24/7 khi cần</div>
+        <div class="tag">Tác phong cẩn thận, bảo mật cao</div>
+        <div class="tag">Phối hợp đa phòng ban</div>
       </div>
 
-      <div class="sec-head sec-gap"><span class="sec-vi">Sở thích</span><span class="sec-en">Interests</span></div>
-      <p style="font-size:12px;color:var(--silver);">Tự động hóa · Công nghệ sản xuất · Bóng đá · Gaming</p>
+      <div class="sec-head sec-gap"><span class="sec-vi">Chứng chỉ &amp; Ngoại ngữ</span><span class="sec-en">Cert &amp; Language</span></div>
+      <p style="font-size:12px;color:var(--silver);line-height:1.7;">
+        Tiếng Anh kỹ thuật · Đọc tài liệu kỹ thuật<br>
+        PHP / Laravel · Quản trị server Linux<br>
+        Đang học thêm: ITIL Foundation, CompTIA A+
+      </p>
 
     </div><!-- /.left-panel -->
 
@@ -790,8 +763,8 @@
 
       <div class="sec-head"><span class="sec-vi">Mục tiêu</span><span class="sec-en">Objective</span></div>
       <div class="objective-block">
-        <p>Xuất phát từ chuyên ngành <strong>Điện tử – Viễn thông</strong> và 4 năm kinh nghiệm trực tiếp tại nhà máy Samsung Electronics — sửa chữa máy CNC, robot KUKA, quản lý nhóm kỹ thuật trong môi trường sản xuất liên tục 3 ca — tôi hiểu rõ văn hóa vận hành, kỷ luật quy trình và yêu cầu phối hợp đa bộ phận đặc thù của nhà máy.</p>
-        <p>Tôi mong muốn đóng góp vào vị trí <strong>IT nhà máy hoặc hành chính kỹ thuật</strong> — nơi có thể vận dụng tổng hợp cả kỹ năng kỹ thuật phần cứng lẫn IT hệ thống để đảm bảo thiết bị và hạ tầng vận hành ổn định.</p>
+        <p>Với hơn 1 năm kinh nghiệm trực tiếp hỗ trợ IT tại <strong>Bệnh viện Hữu Nghị Quốc tế Hà Nội</strong>, tôi hiểu rõ đặc thù vận hành của môi trường y tế: hệ thống phải hoạt động liên tục, dữ liệu bệnh nhân cần được bảo mật tuyệt đối, và mọi sự cố kỹ thuật cần được xử lý nhanh chóng để không ảnh hưởng đến chất lượng chăm sóc.</p>
+        <p>Tôi mong muốn gia nhập <strong>EcoHealth</strong> ở vị trí <strong>IT Support</strong> — nơi tôi có thể phát huy toàn bộ kinh nghiệm hỗ trợ kỹ thuật, quản lý hạ tầng, website và đảm bảo hệ thống thông tin bệnh viện vận hành ổn định, an toàn và hiệu quả.</p>
       </div>
 
       <div class="sec-head"><span class="sec-vi">Kinh nghiệm</span><span class="sec-en">Experience</span></div>
@@ -799,19 +772,52 @@
 
       <div class="timeline">
 
-        <div class="tl-item key">
+        <!-- CURRENT JOB - most prominent -->
+        <div class="tl-item current">
           <div class="tl-dot"></div>
           <div class="tl-header">
-            <div class="tl-title">Trưởng nhóm Kỹ thuật – Samsung Electronics VN</div>
-            <div class="tl-period">10/2014 – 07/2018</div>
+            <div class="tl-title">
+              Nhân viên IT – BV Hữu Nghị Quốc tế Hà Nội
+              <span class="current-badge">Hiện tại</span>
+            </div>
+            <div class="tl-period">08/2025 – Nay</div>
           </div>
-          <div class="tl-sub">Senior Technical, Full-time · Thái Nguyên · Nhà máy >10.000 nhân viên</div>
+          <div class="tl-sub">IT Support, Full-time · Công ty Cổ phần Bệnh viện Hữu Nghị Quốc tế Hà Nội</div>
           <ul class="tl-bullets">
-            <li>Sửa chữa &amp; bảo trì máy CNC, robot KUKA và dây chuyền tự động hóa liên tục 3 ca</li>
-            <li>Phát hiện, phân tích và xử lý sự cố thiết bị điện – cơ, đảm bảo không gián đoạn sản xuất</li>
-            <li>Quản lý &amp; phân công công việc nhóm 5–10 kỹ thuật viên, lập kế hoạch bảo trì định kỳ</li>
-            <li>Phối hợp trực tiếp với kỹ sư Hàn Quốc trong vận hành &amp; nâng cấp thiết bị</li>
-            <li>Tổng hợp và báo cáo KPI bảo trì, tiến độ sửa chữa định kỳ lên cấp quản lý</li>
+            <li>Hỗ trợ team Marketing xây dựng, tối ưu website chính của bệnh viện: tốc độ, bảo mật, giao diện mobile, UX đặt lịch, cấu trúc landing page cho từng chiến dịch.</li>
+            <li>Quản lý hosting, domain, CDN, backup và deploy đảm bảo hệ thống website hoạt động ổn định</li>
+            <li>Hỗ trợ kỹ thuật toàn diện cho người dùng nội bộ: bác sĩ, điều dưỡng, bộ phận hành chính</li>
+            <li>Quản lý và bảo trì hệ thống máy tính, máy in, thiết bị đầu cuối lâm sàng và hạ tầng mạng toàn bệnh viện</li>
+            <li>Hỗ trợ vận hành các phần mềm quản lý y tế nội bộ</li>
+            <li>Xử lý sự cố kỹ thuật kịp thời, đảm bảo hệ thống không gián đoạn trong giờ khám và điều trị</li>
+            <li>Phối hợp với nhà cung cấp trong triển khai, nâng cấp và bảo trì thiết bị IT chuyên dụng</li>
+            <li>Quản lý tài khoản người dùng, phân quyền truy cập theo chính sách bảo mật thông tin bệnh viện</li>
+          </ul>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-header">
+            <div class="tl-title">Freelancer – IT &amp; Web Support</div>
+            <div class="tl-period">06/2024 – 08/2025</div>
+          </div>
+          <div class="tl-sub">Remote · Hỗ trợ kỹ thuật theo yêu cầu</div>
+          <ul class="tl-bullets">
+            <li>Hỗ trợ kỹ thuật từ xa, xử lý sự cố hệ thống và thiết bị cho khách hàng doanh nghiệp</li>
+            <li>Bảo trì website, cấu hình server và tư vấn hạ tầng IT nhỏ</li>
+          </ul>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-header">
+            <div class="tl-title">Lập trình viên PHP – YOPAZ</div>
+            <div class="tl-period">09/2022 – 05/2024</div>
+          </div>
+          <div class="tl-sub">PHP Programmer, Full-time · Dự án outsource Nhật Bản</div>
+          <ul class="tl-bullets">
+            <li>Phát triển hệ thống quản lý web phức tạp; theo dõi và xử lý lỗi hệ thống — tư duy phù hợp với IT support phần mềm bệnh viện</li>
+            <li>Tích hợp API, xây dựng luồng dữ liệu giữa các module — nền tảng để hỗ trợ HIS/ERP y tế</li>
           </ul>
         </div>
 
@@ -824,22 +830,8 @@
           <div class="tl-sub">Technical Staff, Full-time</div>
           <ul class="tl-bullets">
             <li>Lắp đặt, kiểm tra &amp; sửa chữa server, máy tính, camera giám sát và thiết bị văn phòng</li>
-            <li>Cấu hình hệ thống mạng LAN nội bộ và máy trạm cho khách hàng doanh nghiệp</li>
+            <li>Cấu hình hệ thống mạng LAN nội bộ, máy trạm cho khách hàng doanh nghiệp</li>
             <li>Phối hợp triển khai dự án IT, bàn giao và nghiệm thu thiết bị với khách hàng</li>
-          </ul>
-        </div>
-
-        <div class="tl-item">
-          <div class="tl-dot"></div>
-          <div class="tl-header">
-            <div class="tl-title">Lập trình viên PHP – YOPAZ</div>
-            <div class="tl-period">09/2022 – 05/2024</div>
-          </div>
-          <div class="tl-sub">PHP Programmer, Full-time · Dự án outsource Nhật Bản</div>
-          <ul class="tl-bullets">
-            <li>Phát triển hệ thống quản lý web phức tạp (đặt phòng, nhượng quyền, bản đồ số)</li>
-            <li>Theo dõi hệ thống, phát hiện lỗi và phối hợp xử lý — tư duy phù hợp ERP/MES support</li>
-            <li>Tích hợp API, xây dựng luồng dữ liệu giữa các module hệ thống</li>
           </ul>
         </div>
 
@@ -851,27 +843,29 @@
           </div>
           <div class="tl-sub">WordPress Developer, Full-time</div>
           <ul class="tl-bullets">
-            <li>Xây dựng hệ thống quản lý web và giao diện người dùng bằng PHP, WordPress</li>
-            <li>Đào tạo và hướng dẫn nhân viên mới về quy trình kỹ thuật</li>
+            <li>Xây dựng &amp; quản trị hệ thống web, phối hợp xử lý sự cố kỹ thuật đa dạng</li>
+            <li>Đào tạo và hướng dẫn nhân viên mới về quy trình kỹ thuật nội bộ</li>
           </ul>
         </div>
 
-        <div class="tl-item">
+        <div class="tl-item key">
           <div class="tl-dot"></div>
           <div class="tl-header">
-            <div class="tl-title">Freelancer – IT &amp; Web Support</div>
-            <div class="tl-period">06/2024 – Nay</div>
+            <div class="tl-title">Trưởng nhóm Kỹ thuật – Samsung Electronics VN</div>
+            <div class="tl-period">10/2014 – 07/2018</div>
           </div>
-          <div class="tl-sub">Remote</div>
+          <div class="tl-sub">Senior Technical, Full-time · Thái Nguyên · Nhà máy >10.000 nhân viên</div>
           <ul class="tl-bullets">
-            <li>Hỗ trợ kỹ thuật từ xa, xử lý sự cố hệ thống và thiết bị theo yêu cầu khách hàng</li>
+            <li>Quản lý &amp; phân công nhóm 5–10 kỹ thuật viên, lập kế hoạch bảo trì định kỳ thiết bị</li>
+            <li>Phối hợp trực tiếp với chuyên gia Hàn Quốc, rèn luyện kỹ năng giao tiếp kỹ thuật đa ngôn ngữ</li>
+            <li>Xây dựng tác phong làm việc nghiêm ngặt theo quy trình — phù hợp với chuẩn mực y tế</li>
           </ul>
         </div>
 
       </div><!-- /.timeline -->
 
       <div class="note-box">
-        * Sẵn sàng tham gia đào tạo PLC (Mitsubishi / Siemens / Omron), HMI và lắp ráp tủ điện công nghiệp để đáp ứng yêu cầu chuyên môn của nhà máy.
+        ✦ Hiện đang làm việc tại môi trường bệnh viện quốc tế, sẵn sàng mang ngay kinh nghiệm thực tế vào vị trí IT Support tại EcoHealth mà không cần thời gian làm quen với đặc thù ngành y tế.
       </div>
 
     </div><!-- /.right-panel -->
@@ -880,7 +874,7 @@
   <!-- FOOTER -->
   <div class="footer-bar"></div>
   <div class="footer">
-    <span class="footer-name">PHẠM THẾ KIỂM</span>
+    <span class="footer-name">PHẠM THẾ KIỂM – ỨNG TUYỂN IT SUPPORT · ECOHEALTH</span>
     <span class="footer-contact">0339 775 949 · phamthekiem3@gmail.com · Hà Nội, Việt Nam</span>
   </div>
 
